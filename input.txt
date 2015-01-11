@@ -1,0 +1,21 @@
+type:body
+background-color:#d4d4d4
+font-weight:bold
+font-size:30px
+font-family:georgia
+padding:25px
+content:Abhishek's HomePage
+text-align:center
+x--x
+type:h1
+padding:20px
+color:white
+content:Welcome to my homepage
+text-align:center
+x--x
+type:h4
+color:black
+font-size:20px
+content:hey guys!!
+text-align:left
+x--x
