@@ -16,20 +16,40 @@ def create_tag(tag_obj):
     del tag_obj['type']
 
     #start building the tag
-    tag="<"+tag_name+" "+"style='"
+    tag="<"+tag_name+" "
+    style_tag=" style='"
 
     for tag_key in tag_obj.keys():
         if tag_key=='content':
             content_present=True
+        elif tag_key=='src':
+            tag=tag+tag_key+"='"+tag_obj[tag_key]+"' "
+        elif tag_key=='href':
+            tag=tag+tag_key+"='"+tag_obj[tag_key]+"' "
         else:
-            tag=tag+tag_key+":"+tag_obj[tag_key]+";"
+            style_tag=style_tag+tag_key+":"+tag_obj[tag_key]+";"
+
+
+    style_tag=style_tag+"'"
+
+    if tag_name=='title':
+        tag="<head>"+tag
+    else:
+        tag=tag+style_tag
 
     if content_present:
-        tag=tag+"'>"
+        tag=tag+">"
         tag=tag+tag_obj['content']
+        if tag_name!='body' and tag_name!='div':
+            tag=tag+"</"+tag_name+"><br>"
 
-    if tag_name!='body':
-        tag=tag+"</"+tag_name+">"
+        if tag_name=='title':
+            tag=tag+"</head>"
+
+    elif tag_name=='div'or tag_name=='body':
+        tag=tag+">"
+    else:
+            tag = tag+"/><br>"
 
     return tag
 
@@ -46,6 +66,7 @@ def build_template_page(parsed_blocks):
         file_as_an_array.append(tag)
         file_as_an_array.append('\n')
 
+    file_as_an_array.append("</div>")
     file_as_an_array.append("</body>")
     file_as_an_array.append("</html>")
 

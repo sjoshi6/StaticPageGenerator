@@ -1,21 +1,33 @@
+type:title
+content:qwe
+x--x
 type:body
-background-color:#4dff4d
-font-weight:bold
-font-size:30px
-font-family:aerial
 padding:25px
-content:Saurabh’s HomePage
-text-align:center
+background-color:#696969
+x--x
+type:div
+width:600px;
+background-color:#fff
+padding:25px
+margin:auto
+box-shadow:0 0 15px #000
 x--x
 type:h1
-padding:20px
-color:white
-content:Welcome to my homepage
+color:#1065e6
 text-align:center
+content:What Up Bitches?
 x--x
-type:h4
-color:black
-font-size:20px
-content:hey guys!!
-text-align:left
+type:p
+content:Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis fermentum sapien, ac imperdiet sem gravida sit amet. Nam at enim ex. Phasellus ullamcorper ornare dolor et feugiat. Nunc commodo eget dolor eget consectetur. Quisque placerat leo finibus, suscipit turpis sed, egestas mauris. Donec vel dapibus sapien. Proin a ornare leo, et pretium elit. Donec quis viverra sapien, vitae vestibulum metus. Suspendisse mauris arcu, condimentum nec rhoncus nec, suscipit sit amet lectus. In venenatis, nibh eget tincidunt facilisis, leo sapien semper augue, sit amet sagittis nulla ligula a leo. Sed risus justo, dictum nec mollis vitae, luctus ut dui. Suspendisse potenti. Curabitur a tempor nibh.
+x--x
+type:img
+src:1.jpg
+width:350px
+margin:auto
+position:relative
+left:120px
+x--x
+type:a
+href:www.google.com
+content:Go to google
 x--x
