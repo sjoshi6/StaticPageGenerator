@@ -59,15 +59,17 @@ def print_all_dictionaries(parsed_blocks):
             print(key+":"+obj[key])
 
 
-def create_HTML_page(file_as_arr):
+def create_HTML_page(file_as_arr,count):
 
-    if os.path.isfile('index.html'):
-        os.remove('index.html')
+   # if os.path.isfile('index.html'):
+   #     os.remove('index.html')
 
-    output_file = open('index.html','w')
+    filename = 'index'+str(count)+'.html'
+
+    output_file = open('./output_folder/'+filename,'w')
     output_file.writelines(file_as_arr)
 
-def input_reader(filename):
+def input_reader(filename,count):
 
     curr_file=open(filename,'r')
     lines = curr_file.readlines()
@@ -82,7 +84,9 @@ def input_reader(filename):
     file_as_arr = build_template_page(parsed_blocks)
 
     #create the actual HTML page
-    create_HTML_page(file_as_arr)
+    create_HTML_page(file_as_arr,count)
+
+    os.remove('./input_folder/input.txt')
 
 def parse_input_line(lines):
         all_blocks_arr = []
@@ -97,4 +101,4 @@ def parse_input_line(lines):
 
         return all_blocks_arr
 
-input_reader(sys.argv[1])
+#input_reader(sys.argv[1])
